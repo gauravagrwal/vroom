@@ -69,6 +69,9 @@ $(LIB) : $(OBJ)
 
 -include ${DEPS}
 
+python-coverage : CXXFLAGS += -coverage -D USE_PYTHIN_BINDING
+python-coverage : $(MAIN) $(LIB)
+
 clean :
 	$(RM) $(OBJ) $(DEPS)
 	$(RM) $(MAIN)
